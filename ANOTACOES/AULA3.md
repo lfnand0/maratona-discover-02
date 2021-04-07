@@ -1,7 +1,5 @@
 # AULA 3
-
 ## Github Oficial
-
 - https://github.com/rocketseat-education/maratona-discover-02
 
 # Bora Codar
@@ -56,7 +54,6 @@
 
 
 # Próxima aula
-
 - Spoiler
 - Participe da comunidade
 - Tire dúvidas, ajude outros devs e se envolva por lá
@@ -65,5 +62,4 @@
 - Nosso time estará na comunidade para tirar dúvidas e te deixar por dentro de tudo.
 
 # Mission: Assistir aos cursos
-
 - [ ] NodeJS SQLite
