@@ -1,11 +1,10 @@
-const Database = require('./config')
+const Database = require("./config");
 
 const initDb = {
-   async init(){         
+  async init() {
+    const db = await Database();
 
-const db = await Database()
-
-await db.exec(`CREATE TABLE profile (
+    await db.exec(`CREATE TABLE profile (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT, 
     avatar TEXT, 
@@ -16,15 +15,15 @@ await db.exec(`CREATE TABLE profile (
     value_hour INT
 )`);
 
-await db.exec(`CREATE TABLE jobs (
+    await db.exec(`CREATE TABLE jobs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT, 
     daily_hours INT,
     total_hours INT,
     created_at DATETIME
-)`)
+)`);
 
-await db.run(`INSERT INTO profile (
+    await db.run(`INSERT INTO profile (
     name, 
     avatar, 
     monthly_budget, 
@@ -33,16 +32,16 @@ await db.run(`INSERT INTO profile (
     vacation_per_year,
     value_hour
  ) VALUES (
-     "Luiz Fernando",
-     "https://github.com/lfnand0.png",
-     3000,
-     5,
-     5,
-     4,
-     70
-);`)
+    "Luiz Fernando",
+    "https://github.com/lfnand0.png",
+    3000,
+    5,
+    5,
+    4,
+    50
+);`);
 
-await db.run(`INSERT INTO jobs (
+    await db.run(`INSERT INTO jobs (
     name, 
     daily_hours,
     total_hours,
@@ -52,9 +51,9 @@ await db.run(`INSERT INTO jobs (
     2,
     1,
     1617514376018
-);`)
+);`);
 
-await db.run(`INSERT INTO jobs (
+    await db.run(`INSERT INTO jobs (
     name, 
     daily_hours,
     total_hours,
@@ -64,11 +63,10 @@ await db.run(`INSERT INTO jobs (
     3,
     47,
     1617514376018
-);`)
+);`);
 
-await db.close()
-    }
-}
+    await db.close();
+  },
+};
 
-
-initDb.init()
+initDb.init();
